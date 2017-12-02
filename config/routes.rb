@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   resources :railways
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'railways/index'
+
+  root 'railways#index'
 end
