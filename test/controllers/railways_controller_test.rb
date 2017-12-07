@@ -2,47 +2,47 @@ require 'test_helper'
 
 class RailwaysControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @railway = railways(:one)
+    @railway_station = railways(:one)
   end
 
   test "should get index" do
-    get railways_url
+    get railwayStationStations_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_railway_url
+    get new_railwayStation_url
     assert_response :success
   end
 
-  test "should create railway" do
-    assert_difference('Railway.count') do
-      post railways_url, params: { railway: {  } }
+  test "should create @railway_station" do
+    assert_difference('RailwayStation.count') do
+      post railwayStationStations_url, params: {railway_station: {  } }
     end
 
-    assert_redirected_to railway_url(Railway.last)
+    assert_redirected_to railwayStation_url(RailwayStation.last)
   end
 
-  test "should show railway" do
-    get railway_url(@railway)
+  test "should show @railway_station" do
+    get railwayStation_url(@railway_station)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_railway_url(@railway)
+    get edit_railwayStation_url(@railway_station)
     assert_response :success
   end
 
-  test "should update railway" do
-    patch railway_url(@railway), params: { railway: {  } }
-    assert_redirected_to railway_url(@railway)
+  test "should update @railway_station" do
+    patch railwayStation_url(@railway_station), params: {railway_station: {  } }
+    assert_redirected_to railwayStation_url(@railway_station)
   end
 
-  test "should destroy railway" do
-    assert_difference('Railway.count', -1) do
-      delete railway_url(@railway)
+  test "should destroy @railway_station" do
+    assert_difference('RailwayStation.count', -1) do
+      delete railwayStation_url(@railway_station)
     end
 
-    assert_redirected_to railways_url
+    assert_redirected_to railwayStationStations_url
   end
 end
